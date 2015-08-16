@@ -17,7 +17,7 @@ defmodule AuthScratch.Mixfile do
   # Type `mix help compile.app` for more information
   def application do
     [mod: {AuthScratch, []},
-     applications: [:phoenix, :phoenix_html, :cowboy, :logger,
+     applications: [:phoenix, :phoenix_html, :cowboy, :comeonin, :logger,
                     :phoenix_ecto, :postgrex]]
   end
 
@@ -34,6 +34,7 @@ defmodule AuthScratch.Mixfile do
      {:postgrex, ">= 0.0.0"},
      {:phoenix_html, "~> 2.0"},
      {:phoenix_live_reload, "~> 0.6", only: :dev},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:comeonin, "~> 1.1"}]
   end
 end
