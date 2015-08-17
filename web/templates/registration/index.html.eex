@@ -1,0 +1,21 @@
+<section class="register">
+  <h3>Create your Manang.ph account</h3>
+
+  <%= form_for @conn, registration_path(@conn, :create), [name: :register], fn f -> %>
+    <div class="form-group">
+      <%= email_input f, :email, class: "form-control", placeholder: "Email" %>
+    </div>
+
+    <div class="form-group">
+      <%= password_input f, :password, class: "form-control", placeholder: "Password" %>
+    </div>
+
+    <div class="form-group">
+      <div class="checkbox i-checks">
+        <label><%= checkbox(f, :tos) %> Agree to the terms and policies</label>
+      </div>
+    </div>
+
+    <%= submit "Register", class: "btn btn-primary block full-width m-b" %>
+  <% end %>
+</section>

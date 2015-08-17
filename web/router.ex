@@ -17,6 +17,9 @@ defmodule AuthScratch.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+
+    get "/register", RegistrationController, :index
+    post "/register", RegistrationController, :create
   end
 
   # Other scopes may use custom stacks.

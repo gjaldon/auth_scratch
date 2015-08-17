@@ -20,5 +20,14 @@ defmodule AuthScratch.User do
   def changeset(model, params \\ :empty) do
     model
     |> cast(params, @required_fields, @optional_fields)
+    |> hash_password
+  end
+
+  defp hash_password(changeset) do
+    if password = get_change(changeset, :password) do
+      change(changeset, %{password: Comeonin.Bcrypt.hashpwsalt(password)})
+    else
+      changeset
+    end
   end
 end
