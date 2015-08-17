@@ -20,6 +20,10 @@ defmodule AuthScratch.Router do
 
     get "/register", RegistrationController, :index
     post "/register", RegistrationController, :create
+
+    get "/login", SessionController, :index
+    post "/login", SessionController, :create
+    delete "/logout", SessionController, :delete
   end
 
   # Other scopes may use custom stacks.
