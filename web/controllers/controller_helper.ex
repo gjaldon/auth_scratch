@@ -3,7 +3,7 @@ defmodule AuthScratch.ControllerHelper do
   import Phoenix.Controller
 
   def current_user(conn) do
-    conn.private.current_user || get_user(conn)
+    conn.private[:current_user] || get_user(conn)
   end
 
   defp get_user(conn) do

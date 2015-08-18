@@ -22,6 +22,14 @@ defmodule AuthScratch.SessionController do
     end
   end
 
+  def delete(conn, _params) do
+    conn
+    |> put_session(:user_id, nil)
+    |> put_private(:current_user, nil)
+    |> put_flash(:info, "Successfully signed out!")
+    |> redirect(to: "/")
+  end
+
   defp login(conn, nil, _password) do
     conn
     |> put_flash(:error, "Account does not exist.")
