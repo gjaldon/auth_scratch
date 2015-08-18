@@ -1,5 +1,7 @@
 # AuthScratch
 
+This is the repository for the Episode 3 - Authentication from Scratch Phoenix screencast.
+
 To start your Phoenix app:
 
   1. Install dependencies with `mix deps.get`
