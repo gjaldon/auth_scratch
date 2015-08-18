@@ -31,6 +31,7 @@ defmodule AuthScratch.Web do
       import Ecto.Query, only: [from: 2]
 
       import AuthScratch.Router.Helpers
+      import AuthScratch.ControllerHelper
     end
   end
 
@@ -45,12 +46,14 @@ defmodule AuthScratch.Web do
       use Phoenix.HTML
 
       import AuthScratch.Router.Helpers
+      import AuthScratch.ControllerHelper
     end
   end
 
   def router do
     quote do
       use Phoenix.Router
+      import AuthScratch.ControllerHelper
     end
   end
 

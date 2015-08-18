@@ -31,7 +31,7 @@ defmodule AuthScratch.SessionController do
   defp login(conn, user, password) do
     if authenticate(user, password) do
       conn
-      |> put_session("user_id", user.id)
+      |> put_session(:user_id, user.id)
       |> put_flash(:info, "Login successful!")
       |> redirect(to: "/")
     else
