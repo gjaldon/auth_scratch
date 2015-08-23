@@ -12,14 +12,13 @@ defmodule AuthScratch.RegistrationController do
   def create(conn, %{"register" => user_params}) do
     changeset = User.changeset(%User{}, user_params)
 
-    if changeset.valid? do
-      Repo.insert!(changeset)
-
-      conn
-      |> put_flash(:info, "Registration successful.")
-      |> redirect(to: "/")
-    else
-      render(conn, "new.html", changeset: changeset)
+    case Repo.insert(changeset) do
+      {:ok, _user} ->
+        conn
+        |> put_flash(:info, "Registration successful.")
+        |> redirect(to: "/")
+      {:error, changeset} ->
+        render(conn, "index.html")
     end
   end
 end
