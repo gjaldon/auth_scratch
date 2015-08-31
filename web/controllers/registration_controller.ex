@@ -17,7 +17,7 @@ defmodule AuthScratch.RegistrationController do
         conn
         |> put_flash(:info, "Registration successful.")
         |> redirect(to: "/")
-      {:error, changeset} ->
+      {:error, _changeset} ->
         render(conn, "index.html")
     end
   end

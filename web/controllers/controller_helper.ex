@@ -1,6 +1,5 @@
 defmodule AuthScratch.ControllerHelper do
   import Plug.Conn
-  import Phoenix.Controller
 
   def current_user(conn) do
     conn.private[:current_user] || get_user(conn)

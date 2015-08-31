@@ -18,7 +18,7 @@ defmodule AuthScratch.SessionController do
     else
       conn
       |> put_flash(:error, "You must provide an email or password")
-      |> redirect(to: "/")
+      |> render("index.html")
     end
   end
 
