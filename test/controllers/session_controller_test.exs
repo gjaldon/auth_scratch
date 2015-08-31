@@ -15,10 +15,10 @@ defmodule AuthScratch.SessionControllerTest do
 
   test "sign in with no password or email" do
     conn = post conn(), "/login", %{login: %{email: "foo@bar.com", password: nil}}
-    assert html_response(conn, 200) =~ "You must provide an email or password"
+    assert html_response(conn, 200) =~ "You must provide an email and password"
 
     conn = post conn(), "/login", %{login: %{email: nil, password: "foobar"}}
-    assert html_response(conn, 200) =~ "You must provide an email or password"
+    assert html_response(conn, 200) =~ "You must provide an email and password"
   end
 
   test "sign in with non-existent account" do
