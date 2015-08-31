@@ -16,3 +16,5 @@ config :auth_scratch, AuthScratch.Repo,
   password: "postgres",
   database: "auth_scratch_test",
   pool: Ecto.Adapters.SQL.Sandbox
+
+config :comeonin, bcrypt_log_rounds: 4
